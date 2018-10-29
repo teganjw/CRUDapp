@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<style>
+
+body{
+  text-align: center;
+  margin: auto;
+  background-color: #EEF9FF;
+}
+
+</style>
+</head>
+
+
+<body>
+  <br>
+  <h2>Edit <%= dogDetails.dogName %></h2>
+
+<div id="dogPic"><img src="/<%= dogDetails.dogPictureNumber %>.png" height="200"></div><br>
+
+  <form action="/editSubmit" method="post">
+  <input type="hidden" name="thisDogID" value="<%= dogDetails.dogID %>">
+<!-- <%= thisDogID = dogDetails.dogID %> -->
+
+  Dog Name: <br>
+  <input type="text" name="dogName" value="<%= dogDetails.dogName %>">
+  </br>
+
+  Favorite Toy: <br>
+  <input type="text" name="favoriteToy" value="<%= dogDetails.favoriteToy %>">
+  </br>
+
+  Owner Name:<br>
+  <input type="text" name="ownerName" value="<%= dogDetails.ownerName %>">
+  </br>
+  <br>
+  <input type="submit" value="Submit">
+
+  </form>
+
+
+</body>
+
+</html>

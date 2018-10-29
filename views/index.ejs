@@ -1,0 +1,89 @@
+<html>
+
+<head>
+
+
+<style>
+
+
+body{
+  text-align: center;
+  margin: auto;
+  background-color: #A7C2DE;
+  font-family: "Courier New", Courier, monospace;
+  background-position: center;;
+}
+table, th, td {
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    margin:auto;
+}
+h1{
+  color: white;
+}
+#inputValues{
+  color:white;
+}
+#buttonHover:hover{
+  background-color: #F8FAA6;
+  opacity:1;
+}
+
+
+</style>
+
+</head>
+
+<body background = "unnamed.jpg" >
+
+
+<br>
+<h1>Dogs!</h1>
+
+
+<form action="/formSubmit" method="post">
+
+<div id="inputValues">Dog Name: <br>
+<input type="text" name="dogName" value="">
+</br>
+</div>
+
+<div id="inputValues">Favorite Toy: <br>
+<input type="text" name="favoriteToy" value="">
+</br>
+</div>
+
+<div id="inputValues">Owner Name: <br>
+<input type="text" name="ownerName" value="">
+</br>
+</div>
+
+<input type="submit" value="Submit" id="buttonHover">
+<br>
+
+</form>
+
+<table style="width:40%" cellpadding="10">
+<tr>
+  <th></th>
+  <th>Dog Name</th>
+  <th>Favorite Toy</th>
+  <th>Owner</th>
+</tr>
+
+  <% for(var i=0; i<dogs.length; i++) {%>
+      <tr>
+        <td><span><a href="delete/<%= dogs[i].dogID %>"><button type="button" id="close">X</button></a></span></td>
+        <td><span><a href="editDogs/<%= dogs[i].dogID %>"><%= dogs[i].dogName %></a></span></td>
+        <td><span><%= dogs[i].favoriteToy %></span></td>
+        <td><span><%= dogs[i].ownerName %></span></td>
+      </tr>
+  <% } %>
+</table>
+
+
+
+</body>
+
+</html>
