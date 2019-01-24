@@ -79,7 +79,8 @@ var url = "mongodb://tegan:chick3n@ds052408.mlab.com:52408/allyn-database";
 MongoClient.connect(url, { useNewUrlParser: true }, (err, database) => {
   if (err) return console.log(err)
   db = database.db('allyn-database')  //sets database var equal to global db var above
-  app.listen(3000, () => {
+  var port = process.env.PORT || 80
+  app.listen(port, () => {
     console.log('listening on 3000')
   })
 })
